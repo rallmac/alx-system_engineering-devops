@@ -1,2 +1,2 @@
 #!/bin/bash
--user guillaume -exec chown betty hello
+chown --from=guillaume betty hello
