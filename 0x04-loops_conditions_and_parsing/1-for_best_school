@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+a="Best School"
+
+for ((b = 0; b < 10; b++))
+do
+	echo "$a"
+done
