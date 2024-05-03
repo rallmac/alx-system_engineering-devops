@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script will print the pricess id along bash
+
+echo "$$ bash"
+echo "$$ bash"
