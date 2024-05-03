@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script prints the process id of all current processes
+
+ps -ef
