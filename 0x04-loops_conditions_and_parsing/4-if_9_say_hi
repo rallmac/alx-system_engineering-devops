@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script Prints Bests school ten times. but on the ninth time, it prints hi
+
+a="Best School"
+count=0
+
+while [ $count -lt 10 ]
+do
+	echo "$a"
+	if [ $count -eq 8 ]
+	then
+	       echo "Hi"
+	fi
+	((count++))
+done

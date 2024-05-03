@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# This Program prints Best school 10 times but on the 4th time it prints bad luck and on the 8th time, it prints good luck
+
+a="Best School"
+count=0
+
+while [ $count -lt 10 ]
+do
+	if [ $count -eq 3 ]
+	then
+		echo "bad luck"
+	elif [ $count -eq 7 ]
+	then
+		echo "good luck"
+	else
+		echo "$a"
+	fi
+	((count++))
+done
