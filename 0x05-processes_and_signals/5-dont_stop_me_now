@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script terminates a process
+
+if [ $# -ne 1 ];
+then
+	echo "$0 .4-to_infinity_and_beyond"
+	exit 1
+fi
+
+pid=$1
+
+if ps -p $pid > .4-to_infinity_and_beyond;
+then
+	kill $pid
+fi
