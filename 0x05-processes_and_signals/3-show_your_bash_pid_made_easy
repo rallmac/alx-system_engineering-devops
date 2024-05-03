@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # This script will print the pricess id along bash
 
-echo "$$ bash"
-echo "$$ bash"
+./1-list_your_processes | grep "bash"
