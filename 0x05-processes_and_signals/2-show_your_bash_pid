@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script prints the bash process id
+
+ps -es
