@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This script prints the bash process id
 
-ps -es
+./1-list_your_processes | grep "bash"
