@@ -1,2 +1,5 @@
 #!/usr/bin/env bash
 
+# this command lists listening ports
+sudo netstat -tunlp
+sudo netstat -lxp
