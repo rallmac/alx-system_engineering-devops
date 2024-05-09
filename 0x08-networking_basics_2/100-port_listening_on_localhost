@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script listens to another computer on the same network
+
+sudo nc -l 98
