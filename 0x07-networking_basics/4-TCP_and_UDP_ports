@@ -2,4 +2,4 @@
 
 # this command lists listening ports
 
-netstat -tunlp && netstat -lxp
+netstat -l -p
