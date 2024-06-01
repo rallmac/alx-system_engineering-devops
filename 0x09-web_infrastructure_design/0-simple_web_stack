@@ -1,0 +1,46 @@
+#What is a server?
+* A server is a virtuel device or a computer program that provides
+  functionality to other programs or devices. The receiving devices
+  are called clients
+
+#What is the role of a domain name?
+* A domain name is used to identify and locate websites. It does this by
+  assigning a name to the IP address of the website. the IP address is
+  commonly used by the computer to idetify the website but the server
+  converts it to an assigned name to make it human redable
+
+#What type of DNS record www is in www.foobar.com?
+* www is a subdomain and it is usually represented by CNAME (Canonical Name)
+
+#What is the role of the web server?
+* The web server transfers static files in the form of HTTPS, CSS, images
+  and Videos to clients over the internet
+
+#What is the role of the application server?
+* It is used to host and manage applications. It is used to execute server
+  side code, such as java, python or ruby. It also manages connection
+  to database
+
+#What is the role of the database?
+* The database stores data. Data stored in the database can be retreived,
+  managed and deleted
+
+# What is the server using to communicate with the computer of the user
+  requesting the website
+* The server makes use of the IP address
+
+WHAT ARE THE ISSUES WITH THIS INFRASTRUCTURE?
+------------------------------------------------------------------
+# SPOF
+* This refers to Single Point Of Failure
+  This happens when a component of the server fails, causing the
+  entire server to experience downtime
+
+# Downtime experienced due to deployment of new codes
+* Deployment of new codes will cause the server to be restarted
+  during restart, there will bw downtime
+
+# Cannot scale if too much traffic
+* This is when load ballancing comes in. Load ballancing use variety of
+  methods to make the web pages ready available when the clients request
+  for it. It is costly and not quite easy to maintain
