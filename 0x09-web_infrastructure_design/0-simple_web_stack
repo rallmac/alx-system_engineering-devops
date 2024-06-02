@@ -44,3 +44,6 @@ WHAT ARE THE ISSUES WITH THIS INFRASTRUCTURE?
 * This is when load ballancing comes in. Load ballancing use variety of
   methods to make the web pages ready available when the clients request
   for it. It is costly and not quite easy to maintain
+
+#Follow the url below to see a diagram representation of the above
+https://drive.google.com/file/d/1GO-px9eZdoD7IOoiduTQmIrfjgz2YM1y/view?usp=sharing
