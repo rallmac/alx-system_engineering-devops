@@ -1,0 +1,23 @@
+#Additional elements in my new whiteboard
+* These are other devices that has been added to boost the
+  the network productivity
+
+#Servers
+* One more server has been added to make it a total of two servers
+  one server can now be used for the web while the other one
+  is used for the app.
+
+* The web server handles http requests. the app server holds the
+  code base. this serves to handle more requests
+
+#HAproxy Load-balancers
+* This distributes the request evenly between the two servers to
+  improve the appliction performance and also redirect users
+  to a closer server and reduce network latency	
+
+* HAproxy stands for High Availability proxy load balancer. It is
+  widely used and it is open source. It is highly available and can
+  provide resources even if one ore more servers become unavailable
+
+#You can find the diagram that depicts the information above in the link below
+https://drive.google.com/file/d/1g4N7vA4UsjRKSJj3abK71gjHNyrRnVMf/view?usp=sharing

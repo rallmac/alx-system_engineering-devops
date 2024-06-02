@@ -1,0 +1,108 @@
+#Additional elements in my new whiteboard
+* These are other devices that has been added to boost the
+  the network productivity
+
+#Firewalls
+* Firewalls are security systems designed to monitor and control
+  incoming and outgoing network traffic based on predetermined
+  security rules. They act as a barrier between trusted internal
+  networks and untrusted external networks, such as the internet.
+  Firewalls can be hardware-based, software-based, or a combination
+  of both, and their primary functions include
+
+#SSL Certificate for www.foobar.com
+* An SSL (Secure Sockets Layer) certificate is a digital certificate
+  that authenticates the identity of www.foobar.com and encrypts
+  data transmitted between the website and its users. It ensures
+  secure, encrypted communication over the internet.
+
+#Monitoring tools
+* Monitoring tools are software applications designed to observe,
+  track, and manage the performance, availability, and health of
+  IT systems, networks, applications, and infrastructure. They 
+  collect and analyze data to ensure systems operate efficiently
+  and to identify and address issues proactively
+
+#How does the monitoring tool collect data
+* Agent-Based Monitoring: Small software programs, known as agents,
+  are installed on target systems. These agents collect performance
+  and usage data (e.g., CPU, memory, disk usage) and send it back to
+  the central monitoring system.
+
+* Agentless Monitoring: Tools gather data without installing agents,
+  often using standard network protocols like SNMP
+  (Simple Network Management Protocol),
+  WMI (Windows Management Instrumentation), or SSH
+  (Secure Shell). This method queries devices directly for
+  their status and performance metrics
+
+* Log Monitoring: Tools collect and analyze log files generated
+  by systems, applications, and network devices. Logs contain
+  detailed information about events, errors, and system behaviors
+  that are crucial for troubleshooting and security monitoring
+
+* APIs and Webhooks: Monitoring tools use APIs provided by
+  applications and cloud services to collect performance and
+  operational data. Webhooks can be used to push real-time alerts
+  and updates to the monitoring system when specific events occur
+
+* Network Traffic Analysis: Tools monitor network traffic by
+  capturing packets or analyzing flow data (e.g., NetFlow, sFlow)
+  to assess network performance, detect anomalies, and ensure
+  efficient data transmission
+
+* Synthetic Monitoring: Tools simulate user interactions with
+  applications or services to measure performance and availability
+  from the end-user perspective. This helps identify issues that
+  real users might encounter
+
+#How to monitor my web server in QPS(Querries Per Second)
+* To monitor your web servers in QPS, use tools like Prometheus with
+  Grafana for real-time metrics and visualization, or APM solutions
+  such as New Relic or Datadog. You can also leverage web
+  server-specific modules like Apaches mod_status or Nginxs
+  stub_status for direct monitoring. Analyzing web server logs with
+  custom scripts or log analysis tools is another effective method.
+  Lastly, load balancers like HAProxy can provide aggregate QPS
+  metrics across multiple servers
+
+
+WHAT ARE THE ISSUES WITH THIS INFRASTRUCTURE?
+------------------------------------------------------------------
+#Why is terminating SSL at the load balancer level an issue?
+* Terminating SSL at the load balancer level can be an issue because
+  it exposes the internal network to unencrypted traffic, increasing
+  the risk of data interception and eavesdropping. This can lead to
+  potential security vulnerabilities if an attacker gains access to
+  the internal network. Additionally, it may complicate compliance
+  with security standards that require end-to-end encryption,
+  such as PCI-DSS for handling payment information. To mitigate
+  these risks, SSL/TLS termination should be followed by
+  re-encryption before forwarding the traffic to the backend
+  servers
+
+
+#Why is having only one MySQL server capable of accepting writes an issue?
+* Having only one MySQL server capable of accepting writes is an issue
+  because it creates a single point of failure (SPOF). If the primary
+  server goes down, no write operations can be performed, leading to
+  potential data loss and application downtime. This setup also limits
+  write scalability, as all write traffic must be handled by a single
+  server, potentially causing performance bottlenecks. Implementing a
+  failover mechanism or a multi-primary setup can enhance reliability
+  and scalability.
+
+
+#Why might having servers with all the same components
+#(database, web server and application server) be a problem
+* This can be problematic because it can lead to inefficient resource
+  utilization and scaling challenges. This approach can cause performance
+  bottlenecks since all services compete for the same resources on
+  each server. Additionally, it complicates maintenance and updates,
+  as any change or failure impacts the entire stack. Separating these
+  components into dedicated servers or using a microservices architecture
+  can improve scalability, resource management, and fault isolation
+
+
+#Follow the url below to view a diagram representation of the above information
+https://drive.google.com/file/d/1t8E3oKC_0QNRsCBoaW2uVeVe_JvEhSDp/view?usp=sharing
