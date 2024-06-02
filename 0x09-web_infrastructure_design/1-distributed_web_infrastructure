@@ -1,0 +1,91 @@
+#Additional elements in my new whiteboard
+* These are other devices that has been added to boost the
+  the network productivity
+
+#Servers
+* One more server has been added to make it a total of two servers
+  one server can now be used for the web while the other one
+  is used for the app.
+
+* The web server handles http requests. the app server holds the
+  code base. this serves to handle more requests
+
+#Load-balancer
+* This distributes the request evenly between the two servers to
+  improve the appliction performance and also redirect users
+  to a closer server and reduce network latency	
+
+#HAproxy Load-balancer
+* HAproxy stands for High Availability proxy load balancer. It is
+  widely used and it is open source. It is highly available and can
+  provide resources even if one ore more servers become unavailable
+
+
+#Active-Passive setup
+* In this kind of setup, one node is always active. and the other
+  is on standby in case of any failure. on the other hand
+#Active-Active setup is usefull for Gaming, Online trading and 
+  e-commerce platforms. In this kind of setup, the two nodes are
+  active to process requests simultaneously my server is configured
+  to use Active-Active setup. It is an e-commerce website
+
+
+#How a database Primary-Replica (Master-Slave) cluster works
+* This involves a primary (master) database that handles all
+  write operations and updates, while one or more replica (slave)
+  databases replicate the primary's data in real-time and handle
+  read operations. This setup enhances read scalability and
+  provides redundancy. Changes to the primary are asynchronously
+  or synchronously propagated to the replicas, ensuring data
+  consistency across the cluster.
+
+#What is the difference between the Primary and the Replica node
+# in regard to the application
+* In an application using a Primary-Replica setup, the primary node
+  is responsible for handling all write operations, such as inserts,
+  updates, and deletes, ensuring data consistency and integrity.
+  In contrast, replica nodes handle read operations, allowing the
+  application to distribute read queries across multiple nodes, improving
+  read performance and reducing the load on the primary node. The replicas
+  periodically synchronize with the primary to maintain data consistency
+
+WHAT ARE THE ISSUES WITH THIS INFRASTRUCTURE?
+------------------------------------------------------------------
+# Where are SPOF
+* This is typically located in the master Node. If the master node
+  fails, write operation will be not work, causing a downtime until
+  a new master node is promoted
+
+# Security issues(no firewall, no HTTPS)
+* Unrestricted Access: Without a firewall, all network traffic can
+  freely enter and exit the network, making it vulnerable to unauthorized
+  access, malware, and attacks such as DDoS.
+
+* Data Interception: Without HTTPS, data transmitted between clients and
+  servers is unencrypted, making it susceptible to interception and
+  eavesdropping by attackers.
+
+* Man-in-the-Middle Attacks: Lack of HTTPS allows attackers to perform
+  man-in-the-middle attacks, where they can alter or intercept
+  communications without detection.
+
+* Lack of Data Integrity: Without HTTPS, there is no guarantee that
+  the data received is the data sent, as it can be tampered with in
+  transit.
+
+# No monitoring
+* Delayed Incident Response: Without monitoring, identifying and
+  responding to network issues or security breaches is significantly
+  delayed, leading to prolonged downtime and increased damage.
+
+* Undetected Anomalies: Network problems, such as unusual traffic
+  patterns, hardware failures, or unauthorized access attempts,
+  go unnoticed, compromising performance and security.
+
+* Performance Degradation: Without monitoring, it's challenging to
+  track and manage network performance metrics, leading to undetected
+  bottlenecks and degraded user experiences.
+
+* Compliance and Auditing Failures: Many regulatory frameworks
+  require detailed logging and monitoring for compliance; without it,
+  organizations risk non-compliance and potential legal consequences.
