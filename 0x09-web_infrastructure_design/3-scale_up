@@ -19,5 +19,21 @@
   widely used and it is open source. It is highly available and can
   provide resources even if one ore more servers become unavailable
 
+#Web server
+* This server handles HTTPS requests
+
+#Application Server
+* This server serves application querries. this makes the network trafic
+  of users more scalable
+
+#Database
+* This stores the informtion inputed by the users. This informtion can
+  be retrieved and reused upon request for it. the information is readily
+  available particularly because the servers are present, the load balancer
+  and all other additional component of this structure.
+  
+* This structure will eliminate attacks, implement adequate monitoring
+  and regulate trafic for a smooth running of the website
+
 #You can find the diagram that depicts the information above in the link below
-https://drive.google.com/file/d/1g4N7vA4UsjRKSJj3abK71gjHNyrRnVMf/view?usp=sharing
+https://drive.google.com/file/d/1MmVEaK_p_8sVA6y745H9bNWULbW7qMMs/view?usp=sharing
