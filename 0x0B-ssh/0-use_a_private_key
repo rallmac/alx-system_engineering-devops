@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
+# ssh ~/.ssh/school ubuntu@54.210.53.77
 
-# Writing a Bash script that uses ssh to connect to my server using the private key ~/.ssh/school with the user ubuntu
+# Define the private key file path and the server details
+# ssh ~/.ssh/school ubuntu@54.210.53.77
+KEY_FILE="$HOME/.ssh/school"
+USER="ubuntu"
+SERVER="54.210.53.77"
 
-ssh ~/.ssh/school ubuntu@54.210.53.77
+# Check if the private key file exists
+if [ ! -f "$KEY_FILE" ]; then
+    echo "Error: Identity file $KEY_FILE not found."
+    exit 1
+fi
+
+# Attempt to connect to the server using the private key
+ssh -i "$KEY_FILE" "$USER@$SERVER"
