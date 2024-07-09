@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# install load balancer
+
+# Update package list and install HAProxy
+sudo apt-get -y update
+sudo apt-get -y install haproxy
+
+# Set permissions for the HAProxy configuration file
+sudo chown $USER:$USER /etc/haproxy/haproxy.cfg
+
+# Append HAProxy configuration
+echo "
+frontend tobitech
+    bind *:80
+    mode http
+    default_backend app
+
+backend app
+    balance roundrobin
+    server 150386-web-01 34.227.94.229:80 check
+    server 150386-web-02 54.237.109.69:80 check
+" >> /etc/haproxy/haproxy.cfg
+
+# Restart HAProxy service to apply the new configuration
+sudo service haproxy restart
