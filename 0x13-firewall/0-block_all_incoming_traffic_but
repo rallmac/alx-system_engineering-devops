@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# This script dets up a firewall and configures it
+# to filter trafic
+
+# getting super user privillages
+sudo su
+
+# upgrading  server
+apt-get upgrade
+
+# installing firewall
+apt-get install ufw
+
+# enabling firewall
+ufw enable -y
+
+# The filter command
+ufw default deny incoming
+
+# Allowing port 22
+ufw allow 22/tcp
+
+# Allowing port 80
+ufw allow 80/tcp
+
+# Allowing port 443
+ufw allow 443/tcp
+
+# checking status
+ufw status
+
+# checking to ensure ufw is enabled
+ufw enable
+
+# reloading ufw
+ufw reload
