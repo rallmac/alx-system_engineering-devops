@@ -1,0 +1,9 @@
+web01 - CREATE USER 'slave'@'%' IDENTIFIED BY 'paassword';
+web01 - GRANT REPLICATION SLAVE ON *.* TO 'slave'@'%';
+web01 - FLUSH PRIVILEGES;
+web01 - SHOW MASTER STATUS;
+
+web02 - CHANGE MASTER TO MASTER_HOST='34.227.94.229', MASTER_USER='slave', MASTER_PASSWORD='Tobijah@001', MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=749;
+web02 - START SLAVE;
+
+sudo service mysql restart
