@@ -24,7 +24,7 @@ def recurse(subreddit, hot_list=[], after=None):
     """
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     headers = {'User-Agent': 'my-custom-user-agent'}
-    params = {'after': after, 'limit': 100}  # Limit to 100 posts per request
+    params = {'after': after, 'limit': 100}
 
     try:
         response = requests.get(url, headers=headers, params=params,
@@ -33,9 +33,10 @@ def recurse(subreddit, hot_list=[], after=None):
             data = response.json()
             posts = data.get('data', {}).get('children', [])
             if not posts and not hot_list:
-                return None  # If no posts and hot_list is still empty, return None
+                return None
 
-            hot_list.extend([post.get('data', {}).get('title') for post in posts])
+            hot_list.extend([post.get('data', {}).get('title')
+                             for post in posts])
 
             # Check if there's more data to fetch (pagination)
             after = data.get('data', {}).get('after')
