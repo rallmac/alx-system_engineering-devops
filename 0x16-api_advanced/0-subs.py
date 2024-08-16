@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-This function queries the reddit api and returns the number
-of subscribers
+This function queries the Reddit API and returns the number
+of subscribers for a given subreddit.
 """
 
 import requests
@@ -17,6 +17,9 @@ def number_of_subscribers(subreddit):
         if response.status_code == 200:
             data = response.json()
             return data.get('data', {}).get('subscribers', 0)
+        elif response.status_code == 302:
+            # Handles redirection, which indicates an invalid subreddit
+            return 0
         else:
             return 0
     except requests.RequestException:
