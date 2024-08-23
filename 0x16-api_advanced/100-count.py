@@ -47,13 +47,14 @@ def count_words(subreddit, word_list, word_count={}, after=None):
             for word in word_list:
                 # Check for exact matches only (not substrings)
                 title_words = title.split()
-                word_count[word] = word_count.get(word, 0) + title_words.count(word)
+                word_count[word] = word_count.get(word, 0) + \
+                    title_words.count(word)
 
         # Check if there's more data to fetch (pagination)
         after = data.get('data', {}).get('after')
         if after:
             return count_words(subreddit, word_list, word_count, after)
-        
+
         # Sort and print the results after recursion is complete
         if word_count:
             sorted_word_count = sorted(word_count.items(),
