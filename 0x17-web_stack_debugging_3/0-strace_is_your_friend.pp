@@ -1,23 +1,6 @@
-# Ensure the directory exists with correct permissions
-file { '/var/www/html':
-  ensure => directory,
-  owner  => 'www-data',
-  group  => 'www-data',
-  mode   => '0755',
-}
+# This script Fixes bad "phpp" extensions to "php" in "wp-settings.php".
 
-# Ensure the index.php file exists with the correct content and permissions
-file { '/var/www/html/index.php':
-  ensure  => file,
-  content => "<?php\nphpinfo();\n?>",
-  owner   => 'www-data',
-  group   => 'www-data',
-  mode    => '0644',
-}
-
-# Restart Apache to apply changes
-service { 'apache2':
-  ensure => running,
-  enable => true,
-  subscribe => File['/var/www/html/index.php'],
+exec{'fix-wordpress':
+  command => 'sed -i s/phpp/php/g /var/www/html/wp-settings.php',
+  path    => '/usr/local/bin/:/bin/'
 }
